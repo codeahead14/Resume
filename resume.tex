@@ -20,6 +20,23 @@
 %%% Themes: Awesome-CV
 \documentclass[11pt, a4paper]{awesome-cv}
 
+%%% Added for list items in one line
+\usepackage{enumerate}
+%\usepackage[inline]{enumitem} 
+\makeatletter
+% This command ignores the optional argument for itemize and enumerate lists
+\newcommand{\inlineitem}[1][]{%
+\ifnum\enit@type=\tw@
+    {\descriptionlabel{#1}}
+  \hspace{\labelsep}%
+\else
+  \ifnum\enit@type=\z@
+       \refstepcounter{\@listctr}\fi
+    \quad\@itemlabel\hspace{\labelsep}%
+\fi}
+\makeatother
+\parindent=0pt
+
 %%% Override a directory location for fonts(default: 'fonts/')
 \fontdir[fonts/]
 
@@ -31,7 +48,7 @@
 %                 awesome-nephritis, awesome-concrete, awesome-darknight
 %% Color for highlight
 % Define your custom color if you don't like awesome colors
-\colorlet{awesome}{awesome-red}
+\colorlet{awesome}{awesome}
 %\definecolor{awesome}{HTML}{CA63A8}
 %% Colors for text
 %\definecolor{darktext}{HTML}{414141}
@@ -54,17 +71,15 @@
 %     Personal Data
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Essentials
-\name{Claud D.}{Park}
-\address{246-1002, Gwangmyeongmayrouge Apt. 86, Cheongna lime-ro, Seo-gu, Incheon-si, 22738, Rep. of KOREA}
-\mobile{(+82) 10-9030-1843} 
+\name{Gaurav Jain}{}
+\address{C 9/15, Vikramnagar Housing Colony, AHMEDABAD-380015, INDIA}
+\mobile{(+91) 9601578417} 
 %%% Social
-\email{posquit0.bj@gmail.com}
-\homepage{www.posquit0.com}
-\github{posquit0}
-\linkedin{posquit0}
+\email{gaurav.jain14@hotmail.com}
+\github{codeahead14}
+\linkedin{gaurav-jain-53993172}
 %%% Optionals
-\position{Software Engineer{\enskip\cdotp\enskip}Security Expert}
-\quote{``Make the change that you want to see in the world."}
+\position{Scientist/Engineer - ISRO}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -73,7 +88,7 @@
 %%% Make a footer for CV with three arguments(<left>, <center>, <right>)
 \makecvfooter
   {\today}
-  {Claud D. Park~~~·~~~Résumé}
+  {Gaurav Jain~~~·~~~Résumé}
   {\thepage}
 
 \begin{document}
@@ -82,11 +97,11 @@
 
 %%% Import contents
 \import{\sectiondir}{education.tex}
-\import{\sectiondir}{experience.tex}
+\import{\sectiondir}{experience.tex} \newpage
+\import{\sectiondir}{publications.tex}
+\import{\sectiondir}{skills.tex}
+\import{\sectiondir}{undergrad_courses.tex}
 \import{\sectiondir}{extracurricular.tex}
 \import{\sectiondir}{honors.tex}
-\import{\sectiondir}{presentation.tex}
-\import{\sectiondir}{writing.tex}
-\import{\sectiondir}{committees.tex}
 
 \end{document}

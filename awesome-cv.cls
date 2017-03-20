@@ -46,10 +46,13 @@
 %-------------------------------------------------------------------------------
 %                3rd party packages
 %-------------------------------------------------------------------------------
+
+\usepackage{multicol}
 % Needed to make fixed length table
 \RequirePackage{array}
 % Needed to handle list environment
-\RequirePackage{enumitem}
+%\RequirePackage{enumitem}
+\RequirePackage[inline]{enumitem}
 % Needed to handle text alignment
 \RequirePackage{ragged2e}
 % Needed to configure page layout
